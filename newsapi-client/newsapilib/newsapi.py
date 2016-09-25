@@ -46,7 +46,7 @@ class NewsAPI(object):
                                 categorieslist.append(source['category'])
         return set(categorieslist)
 
-    def getArticles(self, cats, srcs, sort):
+    def getArticles(self, cats, srcs, sortby):
         articleslist = []
         if cats:
             srcs += self.getSources(cats)
@@ -54,7 +54,7 @@ class NewsAPI(object):
             r = requests.get('%s%s?source=%s&sortBy=%s&apiKey=%s' % (self.baseurl,
                                                                      self.articlesuri,
                                                                      src,
-                                                                     sort,
+                                                                     sortby,
                                                                      self.apikey))
             r.raise_for_status()
             if r.ok:
