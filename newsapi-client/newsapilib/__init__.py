@@ -1,1 +1,2 @@
 import newsconfig
+import newsapi

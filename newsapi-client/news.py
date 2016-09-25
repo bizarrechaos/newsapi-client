@@ -3,7 +3,7 @@
 """news.py
 
 Usage:
-    news test [options]
+    news [options] get ((sources|articles [<source>]) [<category>]|categorys)
 
 Options:
     -a APIKEY, --apikey APIKEY    Use the provided apikey.
@@ -22,7 +22,7 @@ if __name__ == "__main__":
         c = newsapilib.newsconfig.NewsConfig(apikey=args['--apikey'])
     else:
         c = newsapilib.newsconfig.NewsConfig()
-    print args
-    print c.apikey
-    print c.configpath
-    print c.section
+    n = newsapilib.newsapi.NewsAPI(c.apikey)
+    if args['get']:
+        if args['sources']:
+            print n.getSources()
