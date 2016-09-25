@@ -59,5 +59,6 @@ class NewsAPI(object):
             r.raise_for_status()
             if r.ok:
                 if r.json():
-                    articleslist.append(r.json())
+                    if 'articles' in r.json():
+                        articleslist += r.json()['articles']
         return articleslist
