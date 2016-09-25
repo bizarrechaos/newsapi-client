@@ -18,10 +18,10 @@ class NewsAPI(object):
             if r.json():
                 if 'sources' in r.json():
                     if r.json()['sources']:
-                        for source in r,json()['sources']:
+                        for source in r.json()['sources']:
                             if 'id' in source:
                                 sourceslist.append(source['id'])
-        return sourceslist 
+        return sourceslist
     #get articles from source
     #get sources by category
     #get articles by category
