@@ -29,7 +29,7 @@ def printArts(arts):
     if arts:
         for a in arts:
             ad = uni_json_to_utf8_dict(a)
-            dt = datetime.strptime(ad['publishedAt'], "%Y-%m-%dT%H:%M:%SZ")
+            dt = datetime.strptime(a['publishedAt'], "%Y-%m-%dT%H:%M:%SZ")
             dayname = calendar.day_name[datetime.date(dt).weekday()]
             monthname = calendar.month_name[dt.month]
             ad['publishedAt'] = 'at {}:{} on {}, {} {}, {}'.format(dt.hour, dt.minute, dayname, monthname, dt.day, dt.year)
