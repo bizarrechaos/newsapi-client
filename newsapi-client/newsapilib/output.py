@@ -28,5 +28,5 @@ def printArts(arts):
             dt = datetime.strptime(a['publishedAt'], "%Y-%m-%dT%H:%M:%SZ")
             dayname = calendar.day_name[datetime.date(dt).weekday()]
             monthname = calendar.month_name[dt.month]
-            a['publishedAt'] = 'at {}:{} on {}, {} {}, {}'.format(dt.hour, dt.minute, dayofweek, monthname, dt.day, dt.year)
+            a['publishedAt'] = 'at {}:{} on {}, {} {}, {}'.format(dt.hour, dt.minute, dayname, monthname, dt.day, dt.year)
             print '{title}\nby {author} {publishedAt}\n{description}\n{url}'.format(**a)
