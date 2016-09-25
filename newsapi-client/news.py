@@ -3,7 +3,7 @@
 """news.py
 
 Usage:
-    news [-a <apikey>] get ((sources [<category>...]|articles (<category>...|<source>...) [-s <sortby>])|categories)
+    news [-a <apikey>] get ((sources [<category>...]|articles (category <category>...|source <source>...) [-s <sortby>])|categories)
 
 Options:
     -a <apikey>, --apikey <apikey>    Use the provided apikey.
