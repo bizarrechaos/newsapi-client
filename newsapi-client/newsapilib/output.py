@@ -12,7 +12,8 @@ def jprint(jsondoc):
 def printSrcs(lst):
     if lst:
         for a,b,c in izip_longest(lst[::3],lst[1::3],lst[2::3],fillvalue=' '):
-            print '%-30s%-30s%s' % (a,b,c)
+            #print '%-30s%-30s%s' % (a,b,c)
+            print '{:^30}{:^30}{}'.format(a, b, c)
 
 
 def printCats(cats):

@@ -28,7 +28,7 @@ from docopt import docopt
 
 
 if __name__ == "__main__":
-    args = docopt(__doc__, version='news.py 0.0.1')
+    args = docopt(__doc__, version='news.py 1.0.0')
     if args['--apikey']:
         c = newsapilib.newsconfig.NewsConfig(apikey=args['--apikey'])
     else:
