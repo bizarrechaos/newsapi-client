@@ -30,6 +30,6 @@ def printArts(arts):
                 dayname = calendar.day_name[datetime.date(dt).weekday()]
                 monthname = calendar.month_name[dt.month]
                 a['publishedAt'] = 'at {}:{} on {}, {} {}, {}'.format(dt.hour, dt.minute, dayname, monthname, dt.day, dt.year)
-                print '{title}\nby {author} {publishedAt}\n{description}\n{url}'.format(**a)
+                print '{title}\nby {author} {publishedAt}\n{description}\n{url}'.format(**a.encode('utf-8', 'replace'))
             except:
                 jprint(a)
