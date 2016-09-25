@@ -25,4 +25,4 @@ if __name__ == "__main__":
     n = newsapilib.newsapi.NewsAPI(c.apikey)
     if args['get']:
         if args['sources']:
-            print n.getSources()
+            newsapilib.utils.jprint(n.getSources())
