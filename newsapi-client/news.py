@@ -11,7 +11,7 @@ Options:
     -h, --help                        Show this page.
     -v, --version                     Show the application version.
 
-Example Usage:
+Examples:
     news get categories                         Get all categories.
     news get sources                            Get all sources.
     news get sources general                    Get all sources classified as general.
