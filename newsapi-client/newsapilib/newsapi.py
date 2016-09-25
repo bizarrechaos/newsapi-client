@@ -27,7 +27,7 @@ class NewsAPI(object):
                                 sourceslist.append(source['id'])
         return sourceslist
 
-    def getSources(self):
+    def getCategories(self):
         categorieslist = []
         r = requests.get('%s%s' % (self.baseurl, self.sourcesuri), verify=False)
         r.raise_for_status()
