@@ -16,4 +16,6 @@ def printCats(cats):
 
 
 def printArts(arts):
-    jprint(arts[0])
+    for a in arts:
+        jprint(a)
+        break

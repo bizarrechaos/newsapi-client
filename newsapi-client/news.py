@@ -33,3 +33,4 @@ if __name__ == "__main__":
             newsapilib.output.printArts(n.getArticles(args['<category>'],
                                                       args['<source>'],
                                                       args['--sort']))
+    print args
