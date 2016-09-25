@@ -32,5 +32,5 @@ if __name__ == "__main__":
         elif args['articles']:
             newsapilib.output.printArts(n.getArticles(args['<category>'],
                                                       args['<source>'],
-                                                      args['--sort']))
+                                                      args['-s']))
     print args
