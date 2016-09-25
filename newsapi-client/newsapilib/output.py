@@ -52,7 +52,7 @@ def printCats(cats):
 def printArts(arts):
     if arts:
         for a in arts:
-            print json_loads_bytefield(a)
+            print json_loads_byteified(a)
             # dt = datetime.strptime(a['publishedAt'], "%Y-%m-%dT%H:%M:%SZ")
             # dayname = calendar.day_name[datetime.date(dt).weekday()]
             # monthname = calendar.month_name[dt.month]
