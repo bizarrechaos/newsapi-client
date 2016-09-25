@@ -6,16 +6,19 @@ def jprint(jsondoc):
 
 
 def printSrcs(lst):
-    for a,b,c in zip(lst[::3],lst[1::3],lst[2::3]):
-        print '%-30s%-30s%s' % (a,b,c)
+    if lst:
+        for a,b,c in zip(lst[::3],lst[1::3],lst[2::3]):
+            print '%-30s%-30s%s' % (a,b,c)
 
 
 def printCats(cats):
-    for c in cats:
-        print c
+    if cats:
+        for c in cats:
+            print c
 
 
 def printArts(arts):
-    for a in arts:
-        jprint(a)
-        break
+    if arts:
+        for a in arts:
+            jprint(a)
+            break
