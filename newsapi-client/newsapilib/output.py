@@ -27,10 +27,10 @@ def printArts(arts):
             for b in a:
                 if a[b] is None:
                     a[b] = 'None'
-                if a['publishedAt'] != 'None':
-                    dt = datetime.strptime(a['publishedAt'], "%Y-%m-%dT%H:%M:%SZ")
-                    dayname = calendar.day_name[dt.date().weekday()]
-                    monthname = calendar.month_name[dt.month]
-                    time = dt.strftime("%H:%M")
-                    a['publishedAt'] = 'at {} on {}, {} {}, {}'.format(time, dayname, monthname, dt.day, dt.year)
-                print u'{title}\nby {author} {publishedAt}\n{description}\n{url}\n'.format(**a)
+            if a['publishedAt'] != 'None':
+                dt = datetime.strptime(a['publishedAt'], "%Y-%m-%dT%H:%M:%SZ")
+                dayname = calendar.day_name[dt.date().weekday()]
+                monthname = calendar.month_name[dt.month]
+                time = dt.strftime("%H:%M")
+                a['publishedAt'] = 'at {} on {}, {} {}, {}'.format(time, dayname, monthname, dt.day, dt.year)
+            print u'{title}\nby {author} {publishedAt}\n{description}\n{url}\n'.format(**a)
