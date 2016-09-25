@@ -11,8 +11,17 @@ class NewsAPI(object):
         self.sourcesuri = '/sources'
 
     def getSources(self):
+        sourceslist = []
         r = requests.get('%s%s' % (self.baseurl, self.sourcesuri), verify=False)
-        return r.json()
+        r.raise_for_status()
+        if r.ok:
+            if r.json():
+                if 'sources' in r.json():
+                    if r.json()['sources']:
+                        for source in r,json()['sources']:
+                            if 'id' in source:
+                                sourceslist.append(source['id'])
+        return sourceslist 
     #get articles from source
     #get sources by category
     #get articles by category
