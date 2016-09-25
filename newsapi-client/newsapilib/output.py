@@ -32,4 +32,5 @@ def printArts(arts):
                 a['publishedAt'] = 'at {} on {}, {} {}, {}'.format(time, dayname, monthname, dt.day, dt.year)
                 print u'{title}\nby {author} {publishedAt}\n{description}\n{url}\n'.format(**a)
             except:
+                print a
                 jprint(a)
