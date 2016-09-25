@@ -60,3 +60,4 @@ class NewsAPI(object):
             if r.ok:
                 if r.json():
                     articleslist.append(r.json())
+        return articleslist
