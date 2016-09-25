@@ -6,7 +6,7 @@ from itertools import izip_longest
 
 
 def jprint(jsondoc):
-    print json.dumps(jsondoc, sort_keys=True, indent=2, separators=(',', ': ')).encode('utf-8', 'replace')
+    print json.dumps(jsondoc, sort_keys=True, indent=2, separators=(',', ': '), ensure_ascii=False).encode('utf-8', 'replace')
 
 
 def printSrcs(lst):
