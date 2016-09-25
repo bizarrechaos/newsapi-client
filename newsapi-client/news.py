@@ -3,7 +3,7 @@
 """news.py
 
 Usage:
-    news [options] get ((sources|articles [<source>]) [<category>]|categorys)
+    news [options] get ((sources [<category>]|articles [<category>|<source>])|categories)
 
 Options:
     -a APIKEY, --apikey APIKEY    Use the provided apikey.
@@ -26,3 +26,5 @@ if __name__ == "__main__":
     if args['get']:
         if args['sources']:
             newsapilib.output.printSrcs(n.getSources())
+        elif args['categories']:
+            newsapilib.output.printCats(n.getCategories)
