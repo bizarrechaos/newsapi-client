@@ -11,7 +11,7 @@ class NewsAPI(object):
         self.sourcesuri = '/sources'
 
     def getSources(self):
-        r = request.get('%s%s' % (self.baseurl, self.sourcesuri), verify=False)
+        r = requests.get('%s%s' % (self.baseurl, self.sourcesuri), verify=False)
         return r.json()
     #get articles from source
     #get sources by category
