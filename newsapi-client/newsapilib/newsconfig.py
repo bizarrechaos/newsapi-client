@@ -20,13 +20,13 @@ class NewsConfig(object):
             except:
                 userhome = './'
             configfilename = 'news.cfg'
-            configpath = '%s/%s' % (userhome, configfilename)
+            configpath = '{}/{}'.format(userhome, configfilename)
         return configpath
 
     def setApiKey(self, apikey):
         if apikey is None:
             if not isfile(self.configpath):
-                print '%s does not exist' % self.configpath
+                print '{} does not exist'.format(self.configpath)
                 reply = str(raw_input('Would you like to create a new config? [y/n]: ')).lower().strip()
                 if reply[0] != 'y':
                     print 'No config to parse, creation declined, exiting...'
@@ -50,4 +50,3 @@ class NewsConfig(object):
         parser = ConfigParser.SafeConfigParser()
         parser.read(self.configpath)
         return parser.get(self.section, key)
-
