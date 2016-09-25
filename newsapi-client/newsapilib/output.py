@@ -7,6 +7,7 @@ def jprint(jsondoc):
 
 def printSrcs(lst):
     if lst:
+        print lst
         for a,b,c in zip(lst[::3],lst[1::3],lst[2::3]):
             print '%-30s%-30s%s' % (a,b,c)
 
