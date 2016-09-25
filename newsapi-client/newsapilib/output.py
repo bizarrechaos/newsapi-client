@@ -24,9 +24,12 @@ def printCats(cats):
 def printArts(arts):
     if arts:
         for a in arts:
-            rawdate = a['publishedAt']
-            dt = datetime.strptime(a['publishedAt'], "%Y-%m-%dT%H:%M:%SZ")
-            dayname = calendar.day_name[datetime.date(dt).weekday()]
-            monthname = calendar.month_name[dt.month]
-            a['publishedAt'] = 'at {}:{} on {}, {} {}, {}'.format(dt.hour, dt.minute, dayname, monthname, dt.day, dt.year)
-            print '{title}\nby {author} {publishedAt}\n{description}\n{url}'.format(**a)
+            try:
+                rawdate = a['publishedAt']
+                dt = datetime.strptime(a['publishedAt'], "%Y-%m-%dT%H:%M:%SZ")
+                dayname = calendar.day_name[datetime.date(dt).weekday()]
+                monthname = calendar.month_name[dt.month]
+                a['publishedAt'] = 'at {}:{} on {}, {} {}, {}'.format(dt.hour, dt.minute, dayname, monthname, dt.day, dt.year)
+                print '{title}\nby {author} {publishedAt}\n{description}\n{url}'.format(**a)
+            except:
+                jprint(a)
