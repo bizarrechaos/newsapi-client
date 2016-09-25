@@ -29,5 +29,6 @@ if __name__ == "__main__":
             if args['<category>']:
                 CATEGORIES = args['<category>']
             newsapilib.output.printSrcs(n.getSources(CATEGORIES))
+            print args
         elif args['categories']:
             newsapilib.output.printCats(n.getCategories())
