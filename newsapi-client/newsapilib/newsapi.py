@@ -24,7 +24,7 @@ class NewsAPI(object):
                     if r.json()['sources']:
                         for source in r.json()['sources']:
                             if 'id' in source:
-                                if cats is None:
+                                if not cats:
                                     sourceslist.append(source['id'])
                                 else:
                                     if 'category' in source:
