@@ -3,12 +3,13 @@
 """news.py
 
 Usage:
-    news [options] get ((sources [<category>...]|articles [<category>|<source>])|categories)
+    news [-a <apikey>] get ((sources [<category>...]|articles (<category>...|<source>...) [-s <sortby>])|categories)
 
 Options:
-    -a APIKEY, --apikey APIKEY    Use the provided apikey.
-    -h, --help                    Show this page.
-    -v, --version                 Show the application version.
+    -a <apikey>, --apikey <apikey>    Use the provided apikey.
+    -s <sortby>, --sort <sortby>      Sort the articles returned by (top, latest, popular) [default: top].
+    -h, --help                        Show this page.
+    -v, --version                     Show the application version.
 """
 
 import newsapilib
@@ -26,6 +27,9 @@ if __name__ == "__main__":
     if args['get']:
         if args['sources']:
             newsapilib.output.printSrcs(n.getSources(args['<category>']))
-            print args
         elif args['categories']:
             newsapilib.output.printCats(n.getCategories())
+        elif args['articles']:
+            newsapilib.output.printArts(n.getArticles(args['<category>'],
+                                                      args['<source>'],
+                                                      args['--sortby']))

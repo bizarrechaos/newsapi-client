@@ -13,3 +13,7 @@ def printSrcs(lst):
 def printCats(cats):
     for c in cats:
         print c
+
+
+def printArts(arts):
+    jprint(arts[0])
