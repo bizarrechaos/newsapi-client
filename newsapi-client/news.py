@@ -25,7 +25,7 @@ if __name__ == "__main__":
     n = newsapilib.newsapi.NewsAPI(c.apikey)
     if args['get']:
         if args['sources']:
-            newsapilib.output.printSrcs(n.getSources(args['<categories>']))
+            newsapilib.output.printSrcs(n.getSources(args['<category>']))
             print args
         elif args['categories']:
             newsapilib.output.printCats(n.getCategories())
