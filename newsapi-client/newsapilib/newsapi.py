@@ -14,7 +14,7 @@ class NewsAPI(object):
         self.articlesuri = '/articles'
         self.sourcesuri = '/sources'
 
-    def getSources(self):
+    def getSources(self, cats):
         sourceslist = []
         r = requests.get('%s%s' % (self.baseurl, self.sourcesuri), verify=False)
         r.raise_for_status()
@@ -24,7 +24,13 @@ class NewsAPI(object):
                     if r.json()['sources']:
                         for source in r.json()['sources']:
                             if 'id' in source:
-                                sourceslist.append(source['id'])
+                                if cats is None:
+                                    sourceslist.append(source['id'])
+                                else:
+                                    if 'category' in source:
+                                        for cat in cats:
+                                            if source['category'] == cat:
+                                                sourceslist.append(source['id'])
         return sourceslist
 
     def getCategories(self):
