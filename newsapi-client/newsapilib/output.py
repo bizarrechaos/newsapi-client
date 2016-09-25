@@ -26,6 +26,7 @@ def printArts(arts):
     if arts:
         for a in arts:
             jprint(a)
+            print a
             print yaml.safe_load(a)
             # dt = datetime.strptime(a['publishedAt'], "%Y-%m-%dT%H:%M:%SZ")
             # dayname = calendar.day_name[datetime.date(dt).weekday()]
