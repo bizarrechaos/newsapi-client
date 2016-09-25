@@ -56,7 +56,6 @@ class NewsAPI(object):
                                                                      src,
                                                                      sortby,
                                                                      self.apikey))
-            r.raise_for_status()
             if r.ok:
                 if r.json():
                     if 'articles' in r.json():
