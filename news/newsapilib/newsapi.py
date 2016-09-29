@@ -15,8 +15,10 @@ class NewsAPI(object):
         self.sourcesuri = '/sources'
 
     def getSources(self, cats):
-        sourceslist = []
-        r = requests.get('{}{}'.format(self.baseurl, self.sourcesuri), verify=False)
+        sl = []
+        r = requests.get('{}{}'.format(self.baseurl,
+                         self.sourcesuri),
+                         verify=False)
         r.raise_for_status()
         if r.ok:
             if r.json():
@@ -25,17 +27,18 @@ class NewsAPI(object):
                         for source in r.json()['sources']:
                             if 'id' in source:
                                 if not cats:
-                                    sourceslist.append(source['id'])
+                                    sl.append(source['id'])
                                 else:
                                     if 'category' in source:
                                         for cat in cats:
                                             if source['category'] == cat:
-                                                sourceslist.append(source['id'])
-        return sourceslist
+                                                sl.append(source['id'])
+        return sl
 
     def getCategories(self):
         categorieslist = []
-        r = requests.get('{}{}'.format(self.baseurl, self.sourcesuri), verify=False)
+        r = requests.get('{}{}'.format(self.baseurl, self.sourcesuri),
+                         verify=False)
         r.raise_for_status()
         if r.ok:
             if r.json():
@@ -51,11 +54,12 @@ class NewsAPI(object):
         if cats:
             srcs += self.getSources(cats)
         for src in srcs:
-            r = requests.get('{}{}?source={}&sortBy={}&apiKey={}'.format(self.baseurl,
-                                                                         self.articlesuri,
-                                                                         src,
-                                                                         sortby,
-                                                                         self.apikey))
+            r = requests.get(('{}{}?source={}&sortBy={}&apiKey={}'
+                              .format(self.baseurl,
+                                      self.articlesuri,
+                                      src,
+                                      sortby,
+                                      self.apikey)))
             if r.ok:
                 if r.json():
                     if 'articles' in r.json():

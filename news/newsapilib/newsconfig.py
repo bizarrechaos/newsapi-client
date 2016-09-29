@@ -5,7 +5,8 @@ from os.path import expanduser, isfile
 
 
 class NewsConfig(object):
-    """handles reading, writing, and validating the configuration for newsapi.org"""
+    """handles reading, writing, and validating
+       the configuration for newsapi.org"""
     def __init__(self, configpath=None, apikey=None):
         super(NewsConfig, self).__init__()
         self.section = 'newsapi.org'
@@ -14,7 +15,7 @@ class NewsConfig(object):
 
     def setConfigPath(self, configpath):
         if configpath is None:
-            #set config path to the default of the users home directory
+            # set config path to the default of the users home directory
             try:
                 userhome = expanduser('~')
             except:
@@ -27,11 +28,12 @@ class NewsConfig(object):
         if apikey is None:
             if not isfile(self.configpath):
                 print '{} does not exist'.format(self.configpath)
-                reply = str(raw_input('Would you like to create a new config? [y/n]: ')).lower().strip()
+                reply = (str(raw_input('Create a new config '
+                         '[y/n]: ')).lower().strip())
                 if reply[0] != 'y':
                     print 'No config to parse, creation declined, exiting...'
                     sys.exit(1)
-                apikey = str(raw_input('What is your newsapi.org apikey?: '))
+                apikey = str(raw_input('newsapi.org apikey: '))
                 if not apikey:
                     print 'No config to parse, apikey is not valid, exiting...'
                     sys.exit(2)
