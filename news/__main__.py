@@ -24,7 +24,9 @@ Examples:
     news get articles category general music    Articles from many categories.
 """
 
-from news import newsapilib
+from . import newsconfig
+from . import output
+from . import newsapi
 
 from docopt import docopt
 
@@ -32,19 +34,19 @@ from docopt import docopt
 def main():
     args = docopt(__doc__, version='news.py 0.0.1dev')
     if args['--apikey']:
-        c = newsapilib.newsconfig.NewsConfig(apikey=args['--apikey'])
+        c = newsconfig.NewsConfig(apikey=args['--apikey'])
     else:
-        c = newsapilib.newsconfig.NewsConfig()
-    n = newsapilib.newsapi.NewsAPI(c.apikey)
+        c = newsconfig.NewsConfig()
+    n = newsapi.NewsAPI(c.apikey)
     if args['get']:
         if args['sources']:
-            newsapilib.output.printSrcs(n.getSources(args['<category>']))
+            output.printSrcs(n.getSources(args['<category>']))
         elif args['categories']:
-            newsapilib.output.printCats(n.getCategories())
+            output.printCats(n.getCategories())
         elif args['articles']:
-            newsapilib.output.printArts(n.getArticles(args['<category>'],
-                                                      args['<source>'],
-                                                      args['--sort']))
+            output.printArts(n.getArticles(args['<category>'],
+                                           args['<source>'],
+                                           args['--sort']))
 
 
 if __name__ == "__main__":
