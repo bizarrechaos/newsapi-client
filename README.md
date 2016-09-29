@@ -2,6 +2,8 @@
 
 ###A command line client for newsapi.org written in Python
 
+[![Build Status](https://travis-ci.org/bizarrechaos/newsapi-client.svg?branch=master)](https://travis-ci.org/bizarrechaos/newsapi-client)
+
 ####Installation:
 - git clone
 - cd newsapi-client
