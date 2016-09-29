@@ -24,11 +24,11 @@ Examples:
     news get articles category general music    Articles from many categories.
 """
 
+from docopt import docopt
+
 from . import newsconfig
 from . import output
 from . import newsapi
-
-from docopt import docopt
 
 
 def main():
@@ -40,13 +40,13 @@ def main():
     n = newsapi.NewsAPI(c.apikey)
     if args['get']:
         if args['sources']:
-            output.printSrcs(n.getSources(args['<category>']))
+            output.print_srcs(n.get_sources(args['<category>']))
         elif args['categories']:
-            output.printCats(n.getCategories())
+            output.print_cats(n.get_categories())
         elif args['articles']:
-            output.printArts(n.getArticles(args['<category>'],
-                                           args['<source>'],
-                                           args['--sort']))
+            output.print_arts(n.get_articles(args['<category>'],
+                                             args['<source>'],
+                                             args['--sort']))
 
 
 if __name__ == "__main__":

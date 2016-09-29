@@ -4,7 +4,8 @@
 
 ####Installation:
 - git clone
-- python setup.py install
+- cd newsapi-client
+- python setup.py install OR pip install .
 - get an apikey from [newsapi](https://newsapi.org/)
 - news -h
 
@@ -35,9 +36,5 @@ Examples:
     news get articles category general          Articles from one category.
     news get articles category general music    Articles from many categories.
 ```
-
-####to do:
-- unit testing
-- pyhton3 compatibility
 
 ######powered by [newsapi](https://newsapi.org)

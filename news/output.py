@@ -1,19 +1,10 @@
 import calendar
-import json
 
 from datetime import datetime
 from itertools import izip_longest
 
 
-def jprint(jsondoc):
-    print json.dumps(jsondoc,
-                     sort_keys=True,
-                     indent=2,
-                     separators=(',', ': '),
-                     ensure_ascii=False).encode('utf-8', 'replace')
-
-
-def printSrcs(lst):
+def print_srcs(lst):
     if lst:
         for a, b, c in izip_longest(lst[::3],
                                     lst[1::3],
@@ -22,13 +13,13 @@ def printSrcs(lst):
             print '{:30}{:30}{}'.format(a, b, c)
 
 
-def printCats(cats):
+def print_cats(cats):
     if cats:
         for c in cats:
             print c
 
 
-def printArts(arts):
+def print_arts(arts):
     if arts:
         for a in arts:
             for b in a:

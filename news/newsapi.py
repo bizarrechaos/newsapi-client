@@ -14,7 +14,7 @@ class NewsAPI(object):
         self.articlesuri = '/articles'
         self.sourcesuri = '/sources'
 
-    def getSources(self, cats):
+    def get_sources(self, cats):
         sl = []
         r = requests.get('{}{}'.format(self.baseurl,
                          self.sourcesuri),
@@ -35,7 +35,7 @@ class NewsAPI(object):
                                                 sl.append(source['id'])
         return sl
 
-    def getCategories(self):
+    def get_categories(self):
         categorieslist = []
         r = requests.get('{}{}'.format(self.baseurl, self.sourcesuri),
                          verify=False)
@@ -49,7 +49,7 @@ class NewsAPI(object):
                                 categorieslist.append(source['category'])
         return set(categorieslist)
 
-    def getArticles(self, cats, srcs, sortby):
+    def get_articles(self, cats, srcs, sortby):
         articleslist = []
         if cats:
             srcs += self.getSources(cats)
