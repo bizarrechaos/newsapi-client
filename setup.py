@@ -12,6 +12,6 @@ setup(
     url='https://github.com/bizarrechaos/newsapi-client',
     entry_points='''
         [console_scripts]
-        news = newsapi-client.__main__:main
+        news = news.__main__:main
     '''
 )
