@@ -4,13 +4,13 @@
 
 ####Installation:
 - git clone
-- pip install -r requirements.txt
+- python setup.py install
 - get an apikey from [newsapi](https://newsapi.org/)
-- run it
+- news -h
 
 ####Usage overview:
 ```
-news.py
+news
 
 Usage:
     news [-a apikey] get categories
