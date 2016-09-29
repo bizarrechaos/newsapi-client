@@ -24,7 +24,7 @@ Examples:
     news get articles category general music    Articles from many categories.
 """
 
-from news import newsapilib
+import newsapilib
 
 from docopt import docopt
 
