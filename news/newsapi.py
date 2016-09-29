@@ -52,7 +52,7 @@ class NewsAPI(object):
     def get_articles(self, cats, srcs, sortby):
         articleslist = []
         if cats:
-            srcs += self.getSources(cats)
+            srcs += self.get_sources(cats)
         for src in srcs:
             r = requests.get(('{}{}?source={}&sortBy={}&apiKey={}'
                               .format(self.baseurl,
