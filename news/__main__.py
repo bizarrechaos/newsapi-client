@@ -2,7 +2,7 @@
 
 Usage:
     news [-a apikey] get categories
-    news [-a apikey] get sources [<categories>...]
+    news [-a apikey] get sources [<category>...]
     news [-a apikey] get articles source <source>... [-s <sortby>]
     news [-a apikey] get articles category <category>... [-s <sortby>]
 
