@@ -32,7 +32,7 @@ from . import newsapi
 
 
 def main():
-    args = docopt(__doc__, version='news.py 0.0.1dev')
+    args = docopt(__doc__, version='news.py 1.0')
     if args['--apikey']:
         c = newsconfig.NewsConfig(apikey=args['--apikey'])
     else:

@@ -16,37 +16,18 @@ class NewsConfig(object):
     def set_config_path(self, configpath):
         if configpath is None:
             # set config path to the default of the users home directory
-            try:
-                userhome = expanduser('~')
-            except:
-                userhome = './'
-            configfilename = 'news.cfg'
-            configpath = '{}/{}'.format(userhome, configfilename)
+            configpath = '{}/{}'.format(expanduser('~'), 'news.cfg')
         return configpath
 
     def set_api_key(self, apikey):
         if apikey is None:
-            if not isfile(self.configpath):
+            if isfile(self.configpath):
+                apikey = self.read_config('apikey')
+            else:
                 print '{} does not exist'.format(self.configpath)
-                reply = (str(raw_input('Create a new config '
-                         '[y/n]: ')).lower().strip())
-                if reply[0] != 'y':
-                    print 'No config to parse, creation declined, exiting...'
-                    sys.exit(1)
-                apikey = str(raw_input('newsapi.org apikey: '))
-                if not apikey:
-                    print 'No config to parse, apikey is not valid, exiting...'
-                    sys.exit(2)
-                self.create_config('apikey', apikey)
-            apikey = self.read_config('apikey')
+                print 'create {}, or use the -a flag'.format(self.configpath)
+                sys.exit(1)
         return apikey
-
-    def create_config(self, key, value):
-        parser = ConfigParser.SafeConfigParser()
-        parser.add_section(self.section)
-        parser.set(self.section, key, value)
-        with open(self.configpath, 'w') as fout:
-            parser.write(fout)
 
     def read_config(self, key):
         parser = ConfigParser.SafeConfigParser()

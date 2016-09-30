@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='newsapi-client',
-    version='0.0.1dev',
+    version='1.0',
     author='bizarrechaos',
     packages=['news'],
     license='Apache License Version 2.0',
