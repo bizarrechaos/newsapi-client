@@ -11,6 +11,19 @@
 - get an apikey from [newsapi](https://newsapi.org/)
 - news -h
 
+####Configuration:
+
+By default newsapi-client will look in your home directory for a configuration file that contains your newsapi.org apikey. The file should look like this:
+
+```
+[newsapi.org]
+apikey = thisisanapikey
+```
+
+Where 'thisisanapikey' is your actual apikey.
+
+If you do not wish to use an apikey use the -a/--apikey flag to pass your apikey at runtime.
+
 ####Usage overview:
 ```
 news
