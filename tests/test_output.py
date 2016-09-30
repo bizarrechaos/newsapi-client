@@ -10,13 +10,13 @@ class TestOutput(object):
         lst = ['one', 'two', 'three']
         output.print_srcs(lst)
         out, err = capsys.readouterr()
-        assert out == '{:30}{:30}{}\n'.format(lst[0], lst[1], lst[2])
+        assert out == '{0:30}{1:30}{2}\n'.format(lst[0], lst[1], lst[2])
 
     def test_print_cats(self, capsys):
         lst = ['one', 'two', 'three']
         output.print_cats(lst)
         out, err = capsys.readouterr()
-        assert out == '{}\n{}\n{}\n'.format(lst[0], lst[1], lst[2])
+        assert out == '{0}\n{1}\n{2}\n'.format(lst[0], lst[1], lst[2])
 
     def test_print_arts(self, capsys):
         arts = [{u'description': u'This is a description',
@@ -27,10 +27,10 @@ class TestOutput(object):
         bystring = 'by bizarrechaos at 21:38 on Thursday, September 29, 2016'
         output.print_arts(arts)
         out, err = capsys.readouterr()
-        assert out == '{}\n{}\n{}\n{}\n\n'.format(arts[0]['title'],
-                                                  bystring,
-                                                  arts[0]['description'],
-                                                  arts[0]['url'])
+        assert out == '{0}\n{1}\n{2}\n{3}\n\n'.format(arts[0]['title'],
+                                                      bystring,
+                                                      arts[0]['description'],
+                                                      arts[0]['url'])
 
     def test_print_arts_with_none(self, capsys):
         arts = [{u'description': u'This is a description',
@@ -41,10 +41,10 @@ class TestOutput(object):
         bystring = 'by None at 21:38 on Thursday, September 29, 2016'
         output.print_arts(arts)
         out, err = capsys.readouterr()
-        assert out == '{}\n{}\n{}\n{}\n\n'.format(arts[0]['title'],
-                                                  bystring,
-                                                  arts[0]['description'],
-                                                  arts[0]['url'])
+        assert out == '{0}\n{1}\n{2}\n{3}\n\n'.format(arts[0]['title'],
+                                                      bystring,
+                                                      arts[0]['description'],
+                                                      arts[0]['url'])
 
     def test_print_arts_miliseconds(self, capsys):
         arts = [{u'description': u'This is a description',
@@ -55,10 +55,10 @@ class TestOutput(object):
         bystring = 'by bizarrechaos at 21:38 on Thursday, September 29, 2016'
         output.print_arts(arts)
         out, err = capsys.readouterr()
-        assert out == '{}\n{}\n{}\n{}\n\n'.format(arts[0]['title'],
-                                                  bystring,
-                                                  arts[0]['description'],
-                                                  arts[0]['url'])
+        assert out == '{0}\n{1}\n{2}\n{3}\n\n'.format(arts[0]['title'],
+                                                      bystring,
+                                                      arts[0]['description'],
+                                                      arts[0]['url'])
 
     def test_print_arts_broken_date(self):
         with pytest.raises(ValueError):

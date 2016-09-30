@@ -10,7 +10,7 @@ def print_srcs(lst):
                                     lst[1::3],
                                     lst[2::3],
                                     fillvalue=' '):
-            print '{:30}{:30}{}'.format(a, b, c)
+            print '{0:30}{1:30}{2}'.format(a, b, c)
 
 
 def print_cats(cats):
@@ -38,10 +38,11 @@ def print_arts(arts):
                 dayname = calendar.day_name[dt.date().weekday()]
                 monthname = calendar.month_name[dt.month]
                 time = dt.strftime("%H:%M")
-                a['publishedAt'] = 'at {} on {}, {} {}, {}'.format(time,
-                                                                   dayname,
-                                                                   monthname,
-                                                                   dt.day,
-                                                                   dt.year)
+                a['publishedAt'] = ('at {0} on {1}, {2} {3}, {4}'
+                                    .format(time,
+                                            dayname,
+                                            monthname,
+                                            dt.day,
+                                            dt.year))
             print (u'{title}\nby {author} {publishedAt}\n'
                    '{description}\n{url}\n'.format(**a))

@@ -16,7 +16,7 @@ class NewsAPI(object):
 
     def get_sources(self, cats):
         sl = []
-        r = requests.get('{}{}'.format(self.baseurl,
+        r = requests.get('{0}{1}'.format(self.baseurl,
                          self.sourcesuri),
                          verify=False)
         r.raise_for_status()
@@ -37,7 +37,7 @@ class NewsAPI(object):
 
     def get_categories(self):
         categorieslist = []
-        r = requests.get('{}{}'.format(self.baseurl, self.sourcesuri),
+        r = requests.get('{0}{1}'.format(self.baseurl, self.sourcesuri),
                          verify=False)
         r.raise_for_status()
         if r.ok:
@@ -54,7 +54,7 @@ class NewsAPI(object):
         if cats:
             srcs += self.get_sources(cats)
         for src in srcs:
-            r = requests.get(('{}{}?source={}&sortBy={}&apiKey={}'
+            r = requests.get(('{0}{1}?source={2}&sortBy={3}&apiKey={4}'
                               .format(self.baseurl,
                                       self.articlesuri,
                                       src,

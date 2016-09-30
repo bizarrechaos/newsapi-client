@@ -16,7 +16,7 @@ class NewsConfig(object):
     def set_config_path(self, configpath):
         if configpath is None:
             # set config path to the default of the users home directory
-            configpath = '{}/{}'.format(expanduser('~'), 'news.cfg')
+            configpath = '{0}/{1}'.format(expanduser('~'), 'news.cfg')
         return configpath
 
     def set_api_key(self, apikey):
@@ -24,8 +24,8 @@ class NewsConfig(object):
             if isfile(self.configpath):
                 apikey = self.read_config('apikey')
             else:
-                print '{} does not exist'.format(self.configpath)
-                print 'create {}, or use the -a flag'.format(self.configpath)
+                print '{0} does not exist'.format(self.configpath)
+                print 'create {0}, or use the -a flag'.format(self.configpath)
                 sys.exit(1)
         return apikey
 

@@ -18,7 +18,7 @@ class TestNewsAPI(object):
     def test_get_sources_without_cats(self):
         n = newsapi.NewsAPI('testapikey')
         responses.add(responses.GET,
-                      '{}{}'.format(n.baseurl, n.sourcesuri),
+                      '{0}{1}'.format(n.baseurl, n.sourcesuri),
                       status=200,
                       body=json.dumps({'sources': [{'id': 'test'}]}))
         assert n.get_sources([]) == ['test']
@@ -27,7 +27,7 @@ class TestNewsAPI(object):
     def test_get_sources_with_cats(self):
         n = newsapi.NewsAPI('testapikey')
         responses.add(responses.GET,
-                      '{}{}'.format(n.baseurl, n.sourcesuri),
+                      '{0}{1}'.format(n.baseurl, n.sourcesuri),
                       status=200,
                       body=json.dumps({'sources': [{'id': 'test',
                                                     'category': 'test'}]}))
@@ -37,7 +37,7 @@ class TestNewsAPI(object):
     def test_get_categories(self):
         n = newsapi.NewsAPI('testapikey')
         responses.add(responses.GET,
-                      '{}{}'.format(n.baseurl, n.sourcesuri),
+                      '{0}{1}'.format(n.baseurl, n.sourcesuri),
                       status=200,
                       body=json.dumps({'sources': [{'category': 'test'}]}))
         assert n.get_categories() == set(['test'])
@@ -46,7 +46,7 @@ class TestNewsAPI(object):
     def test_get_articles_without_cats(self):
         n = newsapi.NewsAPI('testapikey')
         responses.add(responses.GET,
-                      '{}{}'.format(n.baseurl, n.articlesuri),
+                      '{0}{1}'.format(n.baseurl, n.articlesuri),
                       status=200,
                       body=json.dumps({'articles': ['test']}))
         assert n.get_articles(None, ['test'], 'top') == ['test']
@@ -55,12 +55,12 @@ class TestNewsAPI(object):
     def test_get_articles_with_cats(self):
         n = newsapi.NewsAPI('testapikey')
         responses.add(responses.GET,
-                      '{}{}'.format(n.baseurl, n.sourcesuri),
+                      '{0}{1}'.format(n.baseurl, n.sourcesuri),
                       status=200,
                       body=json.dumps({'sources': [{'id': 'test',
                                                     'category': 'test'}]}))
         responses.add(responses.GET,
-                      '{}{}'.format(n.baseurl, n.articlesuri),
+                      '{0}{1}'.format(n.baseurl, n.articlesuri),
                       status=200,
                       body=json.dumps({'articles': ['test']}))
         assert n.get_articles(['test'], [], 'top') == ['test']
