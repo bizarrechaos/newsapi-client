@@ -12,7 +12,7 @@ You can install the latest available version of newsapi-client from GitHub using
 pip install git+git://github.com/bizarrechaos/newsapi-client.git
 ```
 
-You can also clone the repository and install supernova:
+You can also clone the repository and install newsapi-client:
 
 ```
 git clone https://github.com/bizarrechaos/newsapi-client.git
