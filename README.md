@@ -5,22 +5,32 @@
 [![Build Status](https://travis-ci.org/bizarrechaos/newsapi-client.svg?branch=master)](https://travis-ci.org/bizarrechaos/newsapi-client)
 
 ####Installation:
-- git clone
-- cd newsapi-client
-- python setup.py install OR pip install .
-- get an apikey from [newsapi](https://newsapi.org/)
-- news -h
+
+You can install the latest available version of newsapi-client from GitHub using pip:
+
+```
+pip install git+git://github.com/bizarrechaos/newsapi-client.git
+```
+
+You can also clone the repository and install supernova:
+
+```
+git clone https://github.com/bizarrechaos/newsapi-client.git
+cd newsapi-client
+python setup.py install
+```
 
 ####Configuration:
 
-By default newsapi-client will look in your home directory for a configuration file that contains your newsapi.org apikey. The file should look like this:
+You will need to get an apikey from [newsapi](https://newsapi.org/).
+
+By default newsapi-client will look in your home directory for a configuration file that contains your newsapi apikey. The file should look like this:
 
 ```
 [newsapi.org]
 apikey = thisisanapikey
+# 'thisisanapikey' should be replaced with your actual apikey
 ```
-
-Where 'thisisanapikey' is your actual apikey.
 
 If you do not wish to use an apikey use the -a/--apikey flag to pass your apikey at runtime.
 
