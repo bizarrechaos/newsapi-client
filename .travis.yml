@@ -10,3 +10,9 @@ notifications:
     on_start: always
     on_failure: always
     on_success: always
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: bizarrechaos
+  password:
+    secure: vFE2LOASX6PuxpQXneGnRbLYAPw/8WK2Zqjg2+2oPzDP7ivst34SioTqmVMo3fI54ntV+ECP3iGToQLlyEpjGaAtlfiLh8wOshZ/5nCdzaKbm9nH7RwPUdus/WDCpWMSQ38a6H0pkSaDSM1OfUgixYmPw9ZpLAoeT/Xjyl5tANGNQgTUn3ypbOQT+pF8g5GOXmZhfd9QYGIwAKIEmuPyR6fLdfyVp3ZS6yL0dCZKkhWyEjRUsJNRqxBbBS8lL3LmNfZghAzkawVxzfb/5y0AA+gAyWhCteIZf0QpDONnYx8Q0vh+PgUyY4ndkYzv/kzCCrw6MaU2FQB22CSrXNIVYIGxqPw71UAf1DNyDp5vUmF4QzKEfA7VYpaAhJ4lcayDtE++WhIRfG7sib2BHwSoXf5lg+s/PcmDYHcK5+9edkCnoYxSxuV9cEKAhcyfobfsUizxTOoQo8vQod2ZV7j4scS2FAocsSfTnmwYFfHFB5kppSSmlzBimdBpyJdlW4GVFVK6WVSs+rR9mxchLnjLoVx9XV+8KkQK5tximpo2Ru7sgAXjy459BVV3qeZ6fTa8tpiEN+/r96qffQFOIrCtAdoXQIPFMoIWn5jixXqq4jsI/41uf9eWi/yjAXnVzBbf2dXDMqVyU5sqwc1wwCAgcegM8vPGrKgKQPOWMnrD1YE=
